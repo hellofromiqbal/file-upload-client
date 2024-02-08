@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -14,6 +15,7 @@ const Home = () => {
   return (
     <div>
       <h1>Home</h1>
+      <Link to={"/books/new"}>Add Book</Link>
       {books.map((book) => (
         <div key={book?._id}>
           <h3>{book?.bookTitle}</h3>
